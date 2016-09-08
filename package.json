@@ -1,0 +1,41 @@
+{
+    "author": "jakub@holubinka.pl",
+    "dependencies": {},
+    "keywords": [],
+    "name": "psi-spacer-c",
+    "pebble": {
+        "displayName": "PSI SPACER C",
+        "enableMultiJS": false,
+        "messageKeys": [],
+        "projectType": "native",
+        "resources": {
+            "media": [
+                {
+                    "file": "images/poo_ico3.png",
+                    "menuIcon": true,
+                    "name": "ICON_POO3",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/action_bar_icon_dismiss_bw.png",
+                    "name": "ICON_CROSS",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/action_bar_icon_check_bw.png",
+                    "name": "ICON_CHECK",
+                    "type": "bitmap"
+                }
+            ]
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "basalt"
+        ],
+        "uuid": "3e485e4f-0917-453d-b512-a0d9315af909",
+        "watchapp": {
+            "watchface": false
+        }
+    },
+    "version": "1.0.0"
+}

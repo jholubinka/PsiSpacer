@@ -5,6 +5,8 @@
 
 Window *menu_window;
 TextLayer *text_layer;
+MenuLayer* menu_layer;
+StatusBarLayer *sb;
 
 uint8_t test_counter=1;
 uint8_t elements[10] ={ 10,11,12,13,14,15,16,17,18,19};
@@ -33,12 +35,14 @@ static void menu_cb_select_long_click (struct MenuLayer *menu_layer, MenuIndex *
 
 void menu_handle_init(void) {
   menu_window = window_create();
-
   text_layer = text_layer_create(GRect(0, 0, 144, 20));
   text_layer_set_text(text_layer, "PSI SPACER");
   
+  StatusBarLayer* sb = status_bar_layer_create();
+  status_bar_layer_set_colors(sb,GColorBlack, GColorYellow);
+  layer_add_child(window_get_root_layer(menu_window), status_bar_layer_get_layer(sb));
   
-  MenuLayer* menu_layer = menu_layer_create(GRect(0,0,144,168));
+  MenuLayer* menu_layer = menu_layer_create(GRect(0,STATUS_BAR_LAYER_HEIGHT,144,168));
   menu_layer_set_callbacks(menu_layer, NULL, (MenuLayerCallbacks) {
     .get_num_rows=menu_cb_get_num_rows,
     .draw_row=menu_cb_draw_row,
@@ -61,6 +65,8 @@ void menu_handle_init(void) {
 
 void menu_handle_deinit(void) {
   text_layer_destroy(text_layer);
+  status_bar_layer_destroy(sb);
+  menu_layer_destroy(menu_layer);
   window_destroy(menu_window);
 }
 

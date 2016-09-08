@@ -30,8 +30,9 @@ void splash_handle_init(void) {
   text_layer_set_font(text_layer, fonts_get_system_font(FONT_KEY_BITHAM_30_BLACK));
   text_layer_set_text(text_layer, "Psi\nSpacer");
   
-  GRect poo=GRect(0,0,28,28);
-  grect_align(&poo, &win, GAlignBottom, false);
+  GRect poo=GRect(58,125,28,28);
+  //grect_align(&poo, &win, GAlignBottom, false);
+  
   icon_poo = gbitmap_create_with_resource(RESOURCE_ID_ICON_POO3);
   bitmap_layer = bitmap_layer_create(poo);
   bitmap_layer_set_bitmap(bitmap_layer, icon_poo);
